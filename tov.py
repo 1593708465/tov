@@ -99,7 +99,6 @@ for i_seq in range(npts_seq):
 #position of maximum mass
 M = np.array(M,float)
 R = np.array(R,float)
-n_max = np.where(M == np.max(M))
 
 #exporting the data to a file seq_tov.d
 np.savetxt(f'seq_tov.d',np.stack((M,R,nB0),axis=1),fmt="%f",header='M(msol) \t R(km) cent_nB(fm^-3)')
