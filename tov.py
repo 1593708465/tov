@@ -1,11 +1,30 @@
-#Ankit Kumar    -   akvyas1995@gmail.com
 #solving the TOV equation: works in CGS units
 #input EOS file = eos.d, with columns = eps prs nB in nuclear units 
+# Copyright (C) 2022  Ankit Kumar
+# Email: akvyas1995@gmail.com
 #-----------------------------------------------------------------------
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
+#-----------------------------------------------------------------------
+
 
 import numpy as np
 from math import pi
 from scipy.interpolate import interp1d
+
 
 global c,G,msol,edcf
 
@@ -36,7 +55,6 @@ dr = 0.02e5
 
 #number of stars in the sequence
 npts_seq = 51
-filename = 'seq_tov'
 
 #central density values to iterate over
 nB0_min,nB0_max = 0.2,np.max(nB)
@@ -84,4 +102,4 @@ R = np.array(R,float)
 n_max = np.where(M == np.max(M))
 
 #exporting the data to a file seq_tov.d
-np.savetxt(f'{filename}.d',np.stack((M,R,nB0),axis=1),fmt="%f",header='M(msol) \t R(km) cent_nB(fm^-3)')
+np.savetxt(f'seq_tov.d',np.stack((M,R,nB0),axis=1),fmt="%f",header='M(msol) \t R(km) cent_nB(fm^-3)')
