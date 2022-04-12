@@ -101,4 +101,4 @@ M = np.array(M,float)
 R = np.array(R,float)
 
 #exporting the data to a file seq_tov.d
-np.savetxt(f'seq_tov.d',np.stack((M,R,nB0),axis=1),fmt="%f",header='M(msol) \t R(km) cent_nB(fm^-3)')
+np.savetxt(f'seq.d',np.stack((M,R,nB0),axis=1),fmt="%f",header='M(msol) \t R(km) cent_nB(fm^-3)')
