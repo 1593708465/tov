@@ -95,6 +95,8 @@ for i_seq in range(npts_seq):
     M[i_seq] = (m0+m)/2/msol
     R[i_seq] = (r0+r)/2/1e5
 
+    print(i_seq,M[i_seq],R[i_seq])
+
 
 #position of maximum mass
 M = np.array(M,float)
